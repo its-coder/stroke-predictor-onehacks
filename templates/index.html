@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+
+    <title>Stroke Probability Predictor</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd; margin-top: 0.5cm;">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">Pred-Strobability</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="/about-us">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="/precaution">Precautions</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div style="margin-left: 100px; margin-top: 8mm; margin-bottom: 8mm;">
+      <h5>Kindly, refer to the <b>Key</b> given on the side <b>--></b></h5>
+    </div>
+   <form class="mt-2" style="margin-left: 2.5cm; margin-top: 5cm;" action="{{ url_for('predict')}}"method="post">
+    <input class="mt-2 ms-5" style="width: 8cm;" type="number" name="Gender" placeholder="Gender" required="required" /><br>
+    <input class="mt-2 ms-5" style="width: 8cm;" type="number" name="Age" placeholder="Age" required="required" /><br>
+    <input class="mt-2 ms-5" style="width: 8cm;" type="number" name="Hypertension" placeholder="Hypertension" required="required" /><br>
+    <input class="mt-2 ms-5" style="width: 8cm;" type="number" name="Heart-Disease" placeholder="Heart Disease" required="required" /><br>
+    <input class="mt-2 ms-5" style="width: 8cm;" type="number" name="Ever-married" placeholder="Marital Status" required="required" /><br>
+    <input class="mt-2 ms-5" style="width: 8cm;" type="number" name="Work-type" placeholder="Type of work" required="required" /><br>
+    <input class="mt-2 ms-5" style="width: 8cm;" type="number" name="Residency-type" placeholder="Type of Residency" required="required" /><br>
+    <input class="mt-2 ms-5" style="width: 8cm;" type="number" name="Avg-glucose" placeholder="Average Glucose Level" required="required" /><br>
+    <input class="mt-2 ms-5" style="width: 8cm;" type="number" name="BMI" placeholder="BMI" required="required" /><br>
+    <input class="mt-2 ms-5" style="width: 8cm;" type="number" name="Smoking-status" placeholder="Smoking Status" required="required" /><br>
+    <br>
+    <div class="ms-5">
+      <button type="submit" class="btn btn-secondary btn-block btn-large">Predict</button>
+    </div>
+    <div style="margin-right: 4cm; margin-top: 0.15cm; margin-bottom: 1cm;" class="card mr-10 position-absolute top-0 end-0" style="width: 50rem;">
+      <div class="card-body ms-30">
+        Gender: <br>
+          1 -> Male <br>
+          2 -> Female <br> 
+          3 -> Other <br>
+        Age: (Enter with respect to your current age) <br>
+        Hypertension: <br>
+          0 -> No <br>
+          1 -> Yes <br>
+        Heart Disease: <br>
+          0 -> No <br>
+          1 -> Yes <br>
+        Marital Status: <br>
+          0 -> No <br>
+          1 -> Yes <br>
+        Work Type: <br>
+          1 -> Private <br>
+          2 -> Self-employed <br>
+          3 -> Govt job <br>
+          4 -> Never worked <br>
+          5 -> Children/Student <br>
+        Residency Type: <br>
+          1 -> Urban <br>
+          2 -> Rural <br>
+        Average Glucose Level: (Enter with respect to your currect Avg. Glucose Level) <br>
+        BMI: (Enter with respect to your current BMI) [You may use the following link to calculate BMI] <br>
+          link - <a href="https://www.calculator.net/bmi-calculator.html">Click to open</a> (Ctrl/Cmd + Left Click) <br>
+        Smoking Status: <br>
+          1 -> Never Smoked <br>
+          2 -> Smokes <br>
+          3 -> Formerly Smokes <br>
+      </div>
+    </div>
+   </form>
+  <br>  
+  <br>
+  </body>
+  <style type="text/css">
+    <!--
+     .tab { margin-left: 40px; }
+    -->
+    </style>
+  </html>
